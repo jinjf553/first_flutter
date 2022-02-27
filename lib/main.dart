@@ -2,11 +2,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:package_info/package_info.dart';
 
 void main() {
-  runApp(const SlidableAutoCloseBehavior(
-    child: MyApp(),
-  ));
+  PackageInfo.fromPlatform().then((packageInfo) {
+    runApp(const SlidableAutoCloseBehavior(
+      child: MyApp(),
+    ));
+  });
 }
 
 class MyApp extends StatelessWidget {
